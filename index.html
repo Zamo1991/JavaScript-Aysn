@@ -3,10 +3,50 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-     <title>Document</title>
+     <title>Asynchronous Javascript-Task</title>
+
 
 </head>
 <body>
+<!--Create a function -->
+
+  <h1> 1. Create a function that calls ‘sayHello’ after 2 seconds</h1>
+function sayHello() {
+console.log("Hello after 2 seconds");
+}
+
+<br>
+<!--Output of this code-->
+<h1>2. What will be the output of this code</h1>
+console.log("A");
+setTimeout(() => {
+console.log("B");
+}, 0);
+console.log("C");
+<br>
+<!--Convert callbacks-->
+<h1>3. Convert this callbacks into a promise</h1>
+function loadData(callback) {
+setTimeout(() => {
+callback("Data loaded");
+}, 1000);
+}
+<br>
+<!--Create a promise chain-->
+<h1>4.Create a Promise Chain of the functions using ‘.then()’</h1>
+   function getUser() {
+return new Promise(resolve => {
+setTimeout(() => resolve("User"), 1000);
+});
+}
+function getPosts(user) {
+return new Promise(resolve => {
+setTimeout(() => resolve(`${user}'s posts`), 1000);
+});
+}
+<br>
+<!--Rewrite promise chain-->
+<h1>5.Rewrite the promise chain in task 4. Using async/await<h1></h1>
    <script src="index.js"></script>
 </body>
 </html>
